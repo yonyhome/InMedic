@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'HomePage.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -13,13 +14,13 @@ class LoginScreen extends StatelessWidget {
         width: double.infinity,
         height: double.infinity,
         child: Stack(
-          children: [cajapurpura(size, context), loginform(context)],
+          children: [encabezado(size, context), loginform(context)],
         ),
       ),
     );
   }
 
-  Container cajapurpura(Size size, BuildContext context) {
+  Container encabezado(Size size, BuildContext context) {
     return Container(
       width: double.infinity,
       height: size.height / 2,
@@ -59,11 +60,11 @@ class LoginScreen extends StatelessWidget {
               width: double.infinity,
               // height: 350,
               decoration: BoxDecoration(
-                  color: cc,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(25),
                   boxShadow: const [
                     BoxShadow(
-                      color: Colors.black12,
+                      color: Colors.white,
                       blurRadius: 15,
                       offset: Offset(0, 5),
                     )
@@ -80,10 +81,12 @@ class LoginScreen extends StatelessWidget {
                         TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           autocorrect: false,
-                          //decoration: InputDecorations.inputDecoration(
-                          //hintext: 'ejemplo@hotmail.com',
-                          //labeltext: 'Correo electronico',
-                          //icono: const Icon(Icons.alternate_email_rounded)),
+                          decoration: new InputDecoration(
+                            hintText: 'ejemplo@hotmail.com',
+                            labelText: 'Correo electronico',
+                            icon: const Icon(Icons.alternate_email_rounded),
+                          ),
+                          style: TextStyle(color: Colors.white),
                           validator: (value) {
                             String pattern =
                                 r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
@@ -97,10 +100,12 @@ class LoginScreen extends StatelessWidget {
                         TextFormField(
                           autocorrect: false,
                           obscureText: true,
-                          //decoration: InputDecorations.inputDecoration(
-                          //hintext: '******',
-                          //labeltext: 'Contraseña',
-                          //icono: const Icon(Icons.lock_outline)),
+                          decoration: new InputDecoration(
+                            border: InputBorder.none,
+                            hintText: '******',
+                            labelText: 'Contraseña',
+                            icon: const Icon(Icons.lock_outline),
+                          ),
                           validator: (value) {
                             return (value != null && value.length >= 6)
                                 ? null
@@ -122,7 +127,10 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {
-                            Navigator.pushReplacementNamed(context, 'home');
+                            //Navigator.pushReplacementNamed(context, 'home');
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => HomePage(),
+                            ));
                           },
                         )
                       ],
