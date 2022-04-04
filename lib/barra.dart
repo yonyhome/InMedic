@@ -13,6 +13,7 @@ class _BarNavigetorState extends State<BarNavigetor> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -20,14 +21,10 @@ class _BarNavigetorState extends State<BarNavigetor> {
           children: <Widget>[
             GestureDetector(
               child: new Container(
-                decoration: new BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
                 child: Image.asset(
                   "img/casa.png",
-                  width: 40,
-                  height: 40,
+                  width: 25,
+                  height: 25,
                 ),
               ),
               onTap: () {
@@ -36,14 +33,10 @@ class _BarNavigetorState extends State<BarNavigetor> {
             ),
             GestureDetector(
               child: new Container(
-                decoration: new BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
                 child: Image.asset(
                   "img/search.png",
-                  width: 45,
-                  height: 45,
+                  width: 35,
+                  height: 35,
                 ),
               ),
               onTap: () {
@@ -52,10 +45,6 @@ class _BarNavigetorState extends State<BarNavigetor> {
             ),
             GestureDetector(
               child: new Container(
-                decoration: new BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
                 child: Image.asset(
                   "img/centro.png",
                   width: 60,
@@ -68,14 +57,10 @@ class _BarNavigetorState extends State<BarNavigetor> {
             ),
             GestureDetector(
               child: new Container(
-                decoration: new BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
                 child: Image.asset(
                   "img/chat.png",
-                  width: 45,
-                  height: 45,
+                  width: 35,
+                  height: 35,
                 ),
               ),
               onTap: () {
@@ -84,14 +69,10 @@ class _BarNavigetorState extends State<BarNavigetor> {
             ),
             GestureDetector(
               child: new Container(
-                decoration: new BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
                 child: Image.asset(
                   "img/user.png",
-                  width: 40,
-                  height: 40,
+                  width: 25,
+                  height: 25,
                 ),
               ),
               onTap: () {

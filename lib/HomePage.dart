@@ -16,6 +16,7 @@ class _HomePageState extends State<HomePage> {
     final size = MediaQuery.of(context).size;
     // ignore: prefer_const_constructors
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 170, 168, 168),
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,
@@ -36,9 +37,10 @@ class _HomePageState extends State<HomePage> {
 
 topdoctors(Size size, BuildContext context) {
   return Column(
+    mainAxisAlignment: MainAxisAlignment.end,
     children: <Widget>[
       Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Text(
