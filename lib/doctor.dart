@@ -19,9 +19,9 @@ class _Doctor extends State<Doctor> {
         child: Column(
           children: [
             encabezado(size, context),
-            // contacto(size, context),
-            // bio(size, context),
-            // articulo(size, context),
+            contacto(size, context),
+            bio(size, context),
+            articulo(size, context),
           ],
         ),
       ),
@@ -39,11 +39,11 @@ encabezado(Size size, BuildContext context) {
       Column(
         children: <Widget>[
           Text(
-            "Doctor Name Last Name",
+            "Doctor Nombre Apellido",
             textAlign: TextAlign.center,
           ),
           Text(
-            "Specialist ",
+            "Especialización ",
             textAlign: TextAlign.center,
           ),
         ],
@@ -53,8 +53,85 @@ encabezado(Size size, BuildContext context) {
   );
 }
 
-contacto(Size size, BuildContext context) {}
+contacto(Size size, BuildContext context) {
+  return Column(
+    children: <Widget>[
+      Image.asset(
+        "img/doctor1.png",
+        width: 200,
+        height: 200,
+      ),
+      Row(
+        children: [
+          IconButton(icon: Icon(Icons.phone), onPressed: () {}),
+        ],
+      )
+    ],
+  );
+}
 
-bio(Size size, BuildContext context) {}
+bio(Size size, BuildContext context) {
+  return Column(
+    children: <Widget>[
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Sobre Nombre Apedillo...",
+            textAlign: TextAlign.left,
+          ),
+          Image.asset(
+            "img/estrella.png",
+            width: 15,
+            height: 15,
+          ),
+          Text("4.5"),
+          Text("| 100 reviews"),
+        ],
+      ),
+      Text(
+          "Esta es una pequeña biografía donde se muestra información del doctor en cuestión.")
+    ],
+  );
+}
 
-articulo(Size size, BuildContext context) {}
+articulo(Size size, BuildContext context) {
+  return Column(
+    children: <Widget>[
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Articulos"),
+          Text("Ver todos"),
+        ],
+      ),
+      Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Nombre de Articulo"),
+              Text("4.9"),
+            ],
+          ),
+          Row(
+            children: [
+              Image.asset(
+                "img/doctor1.png",
+                width: 120,
+                height: 120,
+              ),
+              Text("Aquí va el resumen del articulo.")
+            ],
+          )
+        ],
+      )
+    ],
+  );
+}
