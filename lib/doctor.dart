@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'HomePage.dart';
 
 class Doctor extends StatefulWidget {
   const Doctor({Key? key}) : super(key: key);
@@ -35,7 +36,13 @@ encabezado(Size size, BuildContext context) {
     mainAxisSize: MainAxisSize.max,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
-      IconButton(icon: Icon(Icons.arrow_left), onPressed: () {}),
+      IconButton(
+          icon: Icon(Icons.arrow_left),
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => HomePage(),
+            ));
+          }),
       Column(
         children: <Widget>[
           Text(
