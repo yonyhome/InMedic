@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'PantallaInicio.dart';
+
+import 'screens/PantallaInicio.dart';
 
 void main() {
   runApp(const MyApp());

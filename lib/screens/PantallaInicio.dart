@@ -24,7 +24,7 @@ class _PantallaInicioState extends State<PantallaInicio> {
               children: <Widget>[
                 Center(
                   child: Image.asset(
-                    "img/logo.GIF",
+                    "assets/img/logo.gif",
                     width: MediaQuery.of(context).size.width / 2,
                     height: 200,
                   ),

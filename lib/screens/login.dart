@@ -10,38 +10,20 @@ class LoginScreen extends StatelessWidget {
     Color c = const Color(0xFF006d77);
     return Scaffold(
       backgroundColor: c,
-      body: SizedBox(
-        width: double.infinity,
-        height: double.infinity,
-        child: Stack(
-          children: [encabezado(size, context), loginform(context)],
-        ),
+      body: Stack(
+        children: [encabezado(size, context), loginform(context)],
       ),
     );
   }
 
-  Container encabezado(Size size, BuildContext context) {
-    return Container(
+  SizedBox encabezado(Size size, BuildContext context) {
+    return SizedBox(
       width: double.infinity,
-      height: size.height / 2,
-      child: Stack(
-        children: <Widget>[
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Center(
-                child: Image.asset(
-                  "img/fondo_login.JPEG",
-                  width: MediaQuery.of(context).size.width / 2,
-                  height: 200,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 100),
-              ),
-            ],
-          )
-        ],
+      height: size.height * 0.4,
+      child: Image.asset(
+        "assets/img/fondo_login.jpeg",
+        width: MediaQuery.of(context).size.width,
+        height: 600,
       ),
     );
   }

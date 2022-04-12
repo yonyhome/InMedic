@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
+import 'Calls.dart';
 
 class Doctor extends StatefulWidget {
   const Doctor({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ encabezado(Size size, BuildContext context) {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       IconButton(
-          icon: Icon(Icons.arrow_left),
+          icon: Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => HomePage(),
@@ -68,13 +69,19 @@ contacto(Size size, BuildContext context) {
       child: Column(
         children: <Widget>[
           Image.asset(
-            "img/doctor1.png",
+            "assets/img/doctor1.png",
             width: 200,
             height: 200,
           ),
           Row(
             children: [
-              IconButton(icon: Icon(Icons.phone), onPressed: () {}),
+              IconButton(
+                  icon: Icon(Icons.phone),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Calls(),
+                    ));
+                  })
             ],
           )
         ],
@@ -97,7 +104,7 @@ bio(Size size, BuildContext context) {
               style: TextStyle(color: const Color(0xFF0032777)),
             ),
             Image.asset(
-              "img/estrella.png",
+              "assets/img/estrella.png",
               width: 15,
               height: 15,
             ),
@@ -145,7 +152,7 @@ articulo(Size size, BuildContext context) {
               Row(
                 children: [
                   Image.asset(
-                    "img/doctor1.png",
+                    "assets/img/doctor1.png",
                     width: 120,
                     height: 120,
                   ),

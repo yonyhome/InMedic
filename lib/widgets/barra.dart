@@ -1,6 +1,10 @@
 // ignore_for_file: unnecessary_new
 
 import 'package:flutter/material.dart';
+import 'package:inmedic/screens/HomePage.dart';
+import '../screens/mapPage.dart';
+import '../screens/HomePage.dart';
+import '../screens/doctor.dart';
 
 class BarNavigetor extends StatefulWidget {
   const BarNavigetor({Key? key}) : super(key: key);
@@ -22,31 +26,33 @@ class _BarNavigetorState extends State<BarNavigetor> {
             GestureDetector(
               child: new Container(
                 child: Image.asset(
-                  "img/casa.png",
+                  "assets/img/casa.png",
                   width: 25,
                   height: 25,
                 ),
               ),
               onTap: () {
-                print("Home");
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => HomePage()));
               },
             ),
             GestureDetector(
               child: new Container(
                 child: Image.asset(
-                  "img/search.png",
+                  "assets/img/search.png",
                   width: 35,
                   height: 35,
                 ),
               ),
               onTap: () {
-                print("Search");
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => mapPage()));
               },
             ),
             GestureDetector(
               child: new Container(
                 child: Image.asset(
-                  "img/centro.png",
+                  "assets/img/centro.png",
                   width: 60,
                   height: 60,
                 ),
@@ -58,7 +64,7 @@ class _BarNavigetorState extends State<BarNavigetor> {
             GestureDetector(
               child: new Container(
                 child: Image.asset(
-                  "img/chat.png",
+                  "assets/img/chat.png",
                   width: 35,
                   height: 35,
                 ),
@@ -70,13 +76,14 @@ class _BarNavigetorState extends State<BarNavigetor> {
             GestureDetector(
               child: new Container(
                 child: Image.asset(
-                  "img/user.png",
+                  "assets/img/user.png",
                   width: 25,
                   height: 25,
                 ),
               ),
               onTap: () {
-                print("User");
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Doctor()));
               },
             )
           ],
