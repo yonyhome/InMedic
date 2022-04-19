@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
-
+import 'package:get/get.dart';
+import '../widgets/authentication.dart';
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({Key? key}) : super(key: key);
+  AuthenticationController authenticationController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +63,7 @@ class LoginScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         TextFormField(
+                          
                           keyboardType: TextInputType.emailAddress,
                           autocorrect: false,
                           decoration: new InputDecoration(
@@ -110,9 +113,8 @@ class LoginScreen extends StatelessWidget {
                           ),
                           onPressed: () {
                             //Navigator.pushReplacementNamed(context, 'home');
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => HomePage(),
-                            ));
+                            authenticationController.login("Hola","clave123");
+                          
                           },
                         )
                       ],
