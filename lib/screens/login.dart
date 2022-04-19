@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'HomePage.dart';
 import 'package:get/get.dart';
 import '../widgets/authentication.dart';
+
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
+  String email = "";
+  String pass = "";
+
   AuthenticationController authenticationController = Get.find();
 
   @override
@@ -63,8 +67,10 @@ class LoginScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         TextFormField(
-                          
                           keyboardType: TextInputType.emailAddress,
+                          onChanged: (value) {
+                            email = value;
+                          },
                           autocorrect: false,
                           decoration: new InputDecoration(
                             hintText: 'ejemplo@hotmail.com',
@@ -83,6 +89,9 @@ class LoginScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 30),
                         TextFormField(
+                          onChanged: (value) {
+                            pass = value;
+                          },
                           autocorrect: false,
                           obscureText: true,
                           decoration: new InputDecoration(
@@ -113,8 +122,9 @@ class LoginScreen extends StatelessWidget {
                           ),
                           onPressed: () {
                             //Navigator.pushReplacementNamed(context, 'home');
-                            authenticationController.login("Hola","clave123");
-                          
+                            print(email);
+                            print(pass);
+                            authenticationController.login(email, pass);
                           },
                         )
                       ],
