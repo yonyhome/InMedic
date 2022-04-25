@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'HomePage.dart';
 import 'package:get/get.dart';
 import '../widgets/authentication.dart';
+import '../screens/register.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -77,7 +78,7 @@ class LoginScreen extends StatelessWidget {
                             labelText: 'Correo electronico',
                             icon: const Icon(Icons.alternate_email_rounded),
                           ),
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.black),
                           validator: (value) {
                             String pattern =
                                 r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
@@ -133,10 +134,17 @@ class LoginScreen extends StatelessWidget {
                 ],
               )),
           const SizedBox(height: 50),
-          const Text(
-            'Crear una nueva cuenta',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          )
+          GestureDetector(
+            child: Text(
+              'Crear una nueva cuenta',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => register()),
+              );
+            },
+          ),
         ],
       ),
     );
