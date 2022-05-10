@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../widgets/authentication.dart';
+import 'login.dart';
 
 class register extends StatefulWidget {
   register({Key? key}) : super(key: key);
@@ -150,9 +151,12 @@ SingleChildScrollView registerform(BuildContext context) {
                         ),
                         onPressed: () {
                           //Navigator.pushReplacementNamed(context, 'home');
-                          print(email);
-                          print(pass);
+
                           authenticationController.signup(email, pass);
+
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => LoginScreen(),
+                          ));
                         },
                       )
                     ],
