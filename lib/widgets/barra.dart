@@ -5,6 +5,7 @@ import 'package:inmedic/screens/HomePage.dart';
 import '../screens/mapPage.dart';
 import '../screens/HomePage.dart';
 import '../screens/doctor.dart';
+import '../screens/location_service.dart';
 
 class BarNavigetor extends StatefulWidget {
   const BarNavigetor({Key? key}) : super(key: key);
@@ -81,10 +82,7 @@ class _BarNavigetorState extends State<BarNavigetor> {
                   height: 25,
                 ),
               ),
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Doctor()));
-              },
+              onTap: () {},
             )
           ],
         ),
